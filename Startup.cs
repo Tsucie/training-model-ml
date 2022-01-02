@@ -15,6 +15,8 @@ namespace training_model_ml
 {
     public class Startup
     {
+        internal static string rootPath;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -46,6 +48,8 @@ namespace training_model_ml
             {
                 endpoints.MapControllers();
             });
+
+            rootPath = env.ContentRootPath;
         }
     }
 }
